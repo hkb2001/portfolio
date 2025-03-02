@@ -368,7 +368,9 @@ button:hover {
 /* ###################### EXPERIENCE SECTION STARTED ####################### */
 .experience_section {
     background: var(--second-bg-color);
-    padding-bottom: 3rem;
+    padding-bottom: 6.1rem;
+    padding-top: 5.2rem;
+
 }
   .experience_section h1{
     text-align: center;
@@ -512,6 +514,79 @@ button:hover {
       left: 0%;
     }
   }
+  .project-card {
+    width: 420px; /* Adjust as needed */
+    background: rgba(255, 255, 255, 0.1); /* Transparent glass effect */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    backdrop-filter: blur(10px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Image */
+  .project-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  /* Description */
+  .project-card p {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 10px;
+    text-align: justify; /* Justified text */
+    width: 100%;
+  }
+  @media (width <= 600px) {
+    .project-card p{
+        font-size: 2rem;
+    }
+}
+
+  /* Buttons */
+  .project-buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-buttons a {
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+  }
+
+  .project-buttons a:hover {
+    background: var(--main-color);
+  }
+
+  /* Hover Effects */
+  .project-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .project-card:hover .project-buttons {
+    opacity: 1;
+  }
+
+  .project-card:hover img {
+    transform: scale(1.05);
+  }
   
 
 /* ###################### SERVICES SECTION STARTED ####################### */
@@ -596,7 +671,7 @@ button:hover {
 
 .projects_container h2 {
     font-size: 2rem;
-    padding-top: 3rem;
+    padding-top: 5.2rem;
     margin-bottom: 3rem;
     color: #fff;
     text-align: center;
