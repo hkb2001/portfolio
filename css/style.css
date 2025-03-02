@@ -525,7 +525,16 @@ button:hover {
     transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
     backdrop-filter: blur(10px); /* Blur effect */
     border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
+
+.project-card.hide {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
 
   /* Image */
   .project-card img {

@@ -1,16 +1,37 @@
 // ########################### JS FOR Autoclose NAVBAR in Mobile Screens ########################
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const menuCheckbox = document.getElementById('click');
-  const menuItems = document.querySelectorAll('nav ul li a');
+document.addEventListener("DOMContentLoaded", function () {
+  const filterItems = document.querySelectorAll(".items .item");
+  const projects = document.querySelectorAll(".gallery .project-card");
 
-  menuItems.forEach(item => {
-      item.addEventListener('click', () => {
-          menuCheckbox.checked = false;
+  filterItems.forEach((item) => {
+      item.addEventListener("click", function () {
+          filterItems.forEach((btn) => btn.classList.remove("active"));
+          this.classList.add("active");
+
+          let filterValue = this.getAttribute("data-name");
+
+          projects.forEach((project) => {
+              let projectCategory = project.getAttribute("data-name");
+
+              if (filterValue === "all" || filterValue === projectCategory) {
+                  project.classList.remove("hide"); // Show with animation
+                  setTimeout(() => {
+                      project.style.display = "block"; 
+                  }, 300); // Delay for smooth effect
+              } else {
+                  project.classList.add("hide"); // Hide with animation
+                  setTimeout(() => {
+                      project.style.display = "none";
+                  }, 300); // Wait before hiding completely
+              }
+          });
       });
   });
 });
+
+
 
 
 // ########################### JS FOR STICKY NAVBAR ########################
